@@ -1,0 +1,58 @@
+.movies-page {
+  background: #0f0f0f;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.title {
+  color: #fff;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.movie-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 15px;
+  transition: transform 0.4s ease;
+}
+
+/* Hover effect */
+.movie-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.movie-card:hover .overlay {
+  opacity: 1;
+}
+
+/* Title */
+.overlay h5 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+/* Rating */
+.overlay p {
+  font-size: 14px;
+  color: #f5c518;
+}
