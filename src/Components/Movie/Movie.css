@@ -1,30 +1,73 @@
+/* Page background */
 .movies-page {
-  background: #0f0f0f;
+  background: #0b0b0b;
   min-height: 100vh;
-  padding: 40px 0;
+  padding: 40px 20px;
 }
 
+/* Title */
 .title {
-  color: #fff;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
   margin-bottom: 30px;
-  font-weight: bold;
 }
 
+/* Grid fix (since you removed bootstrap soon) */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.col-lg-3,
+.col-md-4,
+.col-sm-6 {
+  width: 23%;
+}
+
+@media (max-width: 992px) {
+  .col-lg-3,
+  .col-md-4,
+  .col-sm-6 {
+    width: 48%;
+  }
+}
+
+@media (max-width: 600px) {
+  .col-lg-3,
+  .col-md-4,
+  .col-sm-6 {
+    width: 100%;
+  }
+}
+
+/* Card */
 .movie-card {
   position: relative;
-  overflow: hidden;
   border-radius: 15px;
+  overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  background: #111;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover lift */
+.movie-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Image */
 .movie-card img {
   width: 100%;
-  border-radius: 15px;
+  height: 350px;
+  object-fit: cover;
+  display: block;
   transition: transform 0.4s ease;
 }
 
-/* Hover effect */
+/* Zoom effect */
 .movie-card:hover img {
   transform: scale(1.1);
 }
@@ -35,23 +78,23 @@
   bottom: 0;
   width: 100%;
   padding: 15px;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
   color: white;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: 0.3s ease;
 }
 
+/* Show overlay */
 .movie-card:hover .overlay {
   opacity: 1;
 }
 
-/* Title */
+/* Text styles */
 .overlay h5 {
-  font-size: 16px;
-  margin-bottom: 5px;
+  font-size: 15px;
+  margin: 4px 0;
 }
 
-/* Rating */
 .overlay p {
   font-size: 14px;
   color: #f5c518;
